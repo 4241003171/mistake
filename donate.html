@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - VANCAMP REFUGEE INITIATIVE</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function toggleAmountInput() {
+            const donationType = document.getElementById("donation_type").value;
+            const amountRow = document.getElementById("amount_row");
+            if (donationType === "fund") {
+                amountRow.style.display = "";
+            } else {
+                amountRow.style.display = "none";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            toggleAmountInput(); 
+        });
+    </script>
+    <style>
+        .hero-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .hero-section h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            margin-bottom: 15px;
+            color: #f2f2f2;
+        }
+
+        .section p {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #e0e0e0;
+            margin-bottom: 20px;
+        }
+
+        .section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            padding: 20px;
+        }
+        .footer-column {
+            width: 30%;
+        }
+        .footer-column h4 {
+            margin-bottom: 10px;
+        }
+        .social-list {
+            list-style: none;
+            padding: 0;
+        }
+        .social-list li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .social-list li a img {
+            width: 32px;  /* Adjusted size */
+            height: 32px; /* Adjusted size */
+        }
+        .footer-bottom {
+            background: #222;
+            padding: 10px;
+            text-align: center;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="our_work.html">Our Work</a></li>
+                <li><a href="donate.html">Donate</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Donate</h1>
+        <form style="border: 1px solid #ccc; padding: 10px;">
+            <table>
+                <tr>
+                    <td><label for="name">Name:</label></td>
+                    <td><input type="text" id="name" name="name"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><input type="email" id="email" name="email"></td>
+                </tr>
+                <tr>
+                    <td><label for="address">Address:</label></td>
+                    <td><textarea id="address" name="address"></textarea></td>
+                </tr>
+                <tr>
+                    <td><label for="phone">Phone:</label></td>
+                    <td><input type="text" id="phone" name="phone"></td>
+                </tr>
+                <tr>
+                    <td><label for="donation_type">Donation Type:</label></td>
+                    <td>
+                        <select id="donation_type" name="donation_type" onchange="toggleAmountInput()">
+                            <option value="fund">Fund</option>
+                            <option value="clothes">Clothes</option>
+                            <option value="food">Food</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr id="amount_row" style="display:none;">
+                    <td><label for="amount">Enter your amount:</label></td>
+                    <td><input type="number" id="amount" name="amount"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><button type="submit">Donate</button></td>
+                </tr>
+            </table>
+        </form>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h4>Contact us</h4>
+                <p>Phone: +01110811930</p>
+                <p>Email: info@refugeedonationcamp.org</p>
+            </div>
+            <div class="footer-column">
+                <h4>Follow us</h4>
+                <ul class="social-list">
+                    <li><a href="#"><img src="images/icons/facebook.png" alt="facebook"></a></li>
+                    <li><a href="#"><img src="images/icons/instagram.png" alt="instagram"></a></li>
+                    <li><a href="#"><img src="images/icons/youtube.png" alt="youtube"></a></li>
+                    <li><a href="#"><img src="images/icons/linkedin.png" alt="linkedin"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Refugee Donation Camp. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
